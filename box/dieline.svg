@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Box dieline — straight tuck-end carton.
+  Internal dimensions:  W 75 × H 55 × D 20 mm  (fits MP3 player + coiled cable)
+  Sheet:                200 × 91 mm flat
+  Tuck flap:            18 mm
+  Dust flap:             8 mm
+  Glue tab:             10 mm
+  Material:             350 gsm coated cardstock (C2S) or 300 gsm Kraft
+
+  Conventions:
+    red  solid 0.1 mm  → cut line       (CutContour spot colour)
+    blue dashed 0.1 mm → crease/fold    (FoldLine spot colour)
+    grey solid 0.1 mm  → bleed reference (do not print)
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="200mm" height="91mm" viewBox="0 0 200 91">
+
+  <defs>
+    <style><![CDATA[
+      .cut    { fill: none; stroke: #ff0000; stroke-width: 0.1; }
+      .fold   { fill: none; stroke: #0066ff; stroke-width: 0.1;
+                stroke-dasharray: 2 1; }
+      .bleed  { fill: none; stroke: #c0c0c0; stroke-width: 0.1;
+                stroke-dasharray: 0.6 0.4; }
+      .label  { font-family: sans-serif; font-size: 2.2px; fill: #888; }
+    ]]></style>
+  </defs>
+
+  <!-- ====== Cut perimeter ====== -->
+  <path class="cut" d="
+    M 0 18
+    L 0 73
+    L 10 73
+    L 10 81
+    L 30 81
+    L 30 91
+    L 105 91
+    L 105 81
+    L 125 81
+    L 125 73
+    L 200 73
+    L 200 18
+    L 125 18
+    L 125 10
+    L 105 10
+    L 105 0
+    L 72 0
+    L 67.5 4
+    L 63 0
+    L 30 0
+    L 30 10
+    L 10 10
+    L 10 18
+    Z" />
+
+  <!-- ====== Fold (crease) lines ====== -->
+  <!-- vertical creases between panels -->
+  <line class="fold" x1="10"  y1="18" x2="10"  y2="73"/>
+  <line class="fold" x1="30"  y1="18" x2="30"  y2="73"/>
+  <line class="fold" x1="105" y1="18" x2="105" y2="73"/>
+  <line class="fold" x1="125" y1="18" x2="125" y2="73"/>
+  <!-- horizontal creases (top + bottom of body row) -->
+  <line class="fold" x1="10"  y1="18" x2="125" y2="18"/>
+  <line class="fold" x1="10"  y1="73" x2="125" y2="73"/>
+
+  <!-- ====== Panel labels (do not print, guide only) ====== -->
+  <g class="label">
+    <text x="3"   y="48">GLUE</text>
+    <text x="14"  y="48">SIDE 1</text>
+    <text x="60"  y="48">FRONT</text>
+    <text x="109" y="48">SIDE 2</text>
+    <text x="155" y="48">BACK</text>
+    <text x="56"  y="86">BOTTOM TUCK</text>
+    <text x="58"  y="13">TOP TUCK</text>
+    <text x="13"  y="13">DUST</text>
+    <text x="108" y="13">DUST</text>
+    <text x="13"  y="86">DUST</text>
+    <text x="108" y="86">DUST</text>
+  </g>
+</svg>
