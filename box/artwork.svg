@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Box print artwork.
+  Two-colour design: matte black background (#111) + accent orange (#FF6B35)
+  with white type. Cheap to print (1-2 spot colours or full CMYK).
+
+  The dieline is overlaid as a faint guide and is on the "Guide" layer —
+  hide / delete before exporting print-ready PDF. The cut and fold
+  marks are NOT meant to be printed; they exist for the press to align.
+
+  Coordinates match dieline.svg (200 × 91 mm, mm units).
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="200mm" height="91mm" viewBox="0 0 200 91">
+
+  <defs>
+    <style><![CDATA[
+      .bg-dark    { fill: #111111; }
+      .bg-accent  { fill: #ff6b35; }
+      .ink-white  { fill: #ffffff; }
+      .ink-mute   { fill: #cfcfcf; }
+      .stroke-w   { fill: none; stroke: #ffffff; stroke-width: 0.3; }
+      .h1 { font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 800;
+            font-size: 11px; fill: #ffffff; letter-spacing: -0.3px; }
+      .h2 { font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700;
+            font-size: 4.5px; fill: #ffffff; }
+      .body { font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 400;
+              font-size: 2.6px; fill: #ffffff; }
+      .tag  { font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 500;
+              font-size: 2.4px; fill: #ff6b35; letter-spacing: 0.5px; }
+      .mono { font-family: 'IBM Plex Mono', 'Courier New', monospace;
+              font-size: 2.2px; fill: #cfcfcf; }
+      .side { font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700;
+              font-size: 2.6px; fill: #ffffff; letter-spacing: 1.5px; }
+      .cut    { fill: none; stroke: #ff0000; stroke-width: 0.1; opacity: 0.4; }
+      .fold   { fill: none; stroke: #0066ff; stroke-width: 0.1;
+                stroke-dasharray: 2 1; opacity: 0.4; }
+    ]]></style>
+
+    <!-- waveform path: a stylised audio wave used as a flourish -->
+    <symbol id="wave" viewBox="0 0 50 8">
+      <path d="M 0 4 Q 2 0 4 4 T 8 4 T 12 4 T 16 4 T 20 4 T 24 4
+               T 28 4 T 32 4 T 36 4 T 40 4 T 44 4 T 48 4 L 50 4"
+            fill="none" stroke="#ff6b35" stroke-width="0.6"
+            stroke-linecap="round"/>
+    </symbol>
+
+    <!-- tiny device illustration (the player itself) -->
+    <symbol id="device" viewBox="0 0 50 35">
+      <rect x="2" y="2" width="46" height="31" rx="3" ry="3"
+            fill="none" stroke="#ff6b35" stroke-width="0.6"/>
+      <rect x="6" y="6" width="20" height="11" rx="0.6" ry="0.6"
+            fill="#ff6b35" opacity="0.2"
+            stroke="#ff6b35" stroke-width="0.4"/>
+      <!-- 6 button dots -->
+      <g fill="#ff6b35">
+        <circle cx="32" cy="9"  r="0.9"/>
+        <circle cx="38" cy="9"  r="0.9"/>
+        <circle cx="44" cy="9"  r="0.9"/>
+        <circle cx="32" cy="14" r="0.9"/>
+        <circle cx="38" cy="14" r="0.9"/>
+        <circle cx="44" cy="14" r="0.9"/>
+      </g>
+      <!-- USB-C slot -->
+      <rect x="20" y="31.4" width="10" height="1.2" rx="0.6" ry="0.6"
+            fill="#ff6b35"/>
+    </symbol>
+  </defs>
+
+  <!-- =========================================================
+       BLEED: full coverage 3 mm beyond every cut. Print colour
+       extends to bleed; safe text margin is 4 mm inside cuts.
+       For visual clarity here we just paint inside each panel.
+       ========================================================= -->
+
+  <!-- ===== Background flood (whole carton) ===== -->
+  <!-- Paint dark fill covering the entire dieline shape so colour
+       wraps around all flaps once folded. -->
+  <path class="bg-dark" d="
+    M 0 18 L 0 73 L 10 73 L 10 81 L 30 81 L 30 91 L 105 91
+    L 105 81 L 125 81 L 125 73 L 200 73 L 200 18 L 125 18
+    L 125 10 L 105 10 L 105 0 L 72 0 L 67.5 4 L 63 0 L 30 0
+    L 30 10 L 10 10 L 10 18 Z" />
+
+  <!-- ===== FRONT PANEL (x 30..105, y 18..73) =================== -->
+  <!-- Accent corner stripe, top-left -->
+  <polygon class="bg-accent" points="30,18 50,18 30,38" />
+
+  <text x="34" y="34" class="tag">OPEN HARDWARE • POCKET AUDIO</text>
+
+  <text x="34" y="49" class="h1">mp3</text>
+  <text x="34" y="60" class="h1" fill="#ff6b35">player</text>
+
+  <use href="#wave" x="34" y="63" width="60" height="6"/>
+
+  <use href="#device" x="62" y="20" width="40" height="14"/>
+
+  <!-- ===== BACK PANEL (x 125..200, y 18..73) =================== -->
+  <text x="129" y="25" class="h2">WHAT'S INSIDE</text>
+  <line class="stroke-w" x1="129" y1="26.6" x2="196" y2="26.6"/>
+  <text x="129" y="31" class="body">• 1 × MP3 player (assembled)</text>
+  <text x="129" y="35" class="body">• 1 × USB-A → USB-C cable, 30 cm</text>
+  <text x="129" y="39" class="body">• 1 × Quick-start card</text>
+
+  <text x="129" y="48" class="h2">SPECS</text>
+  <line class="stroke-w" x1="129" y1="49.6" x2="196" y2="49.6"/>
+  <text x="129" y="54" class="body">ESP32-WROOM-32E   •   500 mAh LiPo</text>
+  <text x="129" y="58" class="body">microSD up to 32 GB   •   FAT32</text>
+  <text x="129" y="62" class="body">MP3 / WAV / FLAC / AAC / OGG</text>
+  <text x="129" y="66" class="body">~10 h playback   •   USB-C charging</text>
+
+  <!-- barcode placeholder (replace with real EAN-13 on prod) -->
+  <g transform="translate(168,68)">
+    <rect width="28" height="3" fill="#ffffff"/>
+    <g fill="#111111">
+      <rect x="1"  y="0" width="0.4" height="3"/>
+      <rect x="2"  y="0" width="0.6" height="3"/>
+      <rect x="3.2" y="0" width="0.3" height="3"/>
+      <rect x="4"  y="0" width="0.5" height="3"/>
+      <rect x="5"  y="0" width="0.7" height="3"/>
+      <rect x="6.5" y="0" width="0.4" height="3"/>
+      <rect x="7.5" y="0" width="0.6" height="3"/>
+      <rect x="9"  y="0" width="0.3" height="3"/>
+      <rect x="10" y="0" width="0.8" height="3"/>
+      <rect x="11.5" y="0" width="0.4" height="3"/>
+      <rect x="12.5" y="0" width="0.6" height="3"/>
+      <rect x="14" y="0" width="0.3" height="3"/>
+      <rect x="15" y="0" width="0.7" height="3"/>
+      <rect x="16.5" y="0" width="0.4" height="3"/>
+      <rect x="17.5" y="0" width="0.5" height="3"/>
+      <rect x="19" y="0" width="0.3" height="3"/>
+      <rect x="20" y="0" width="0.8" height="3"/>
+      <rect x="21.5" y="0" width="0.4" height="3"/>
+      <rect x="22.5" y="0" width="0.6" height="3"/>
+      <rect x="24" y="0" width="0.3" height="3"/>
+      <rect x="25" y="0" width="0.7" height="3"/>
+      <rect x="26.5" y="0" width="0.4" height="3"/>
+    </g>
+    <text x="0" y="5" class="mono" font-size="1.4">5 901234 567890</text>
+  </g>
+
+  <!-- ===== SIDE 1 (left, x 10..30, y 18..73) =================== -->
+  <g transform="translate(20,68) rotate(-90)">
+    <text class="side">OPEN HARDWARE  ·  SINCE 2026</text>
+  </g>
+
+  <!-- ===== SIDE 2 (right, x 105..125, y 18..73) ================ -->
+  <g transform="translate(115,23) rotate(90)">
+    <text class="side">MADE FOR HUMANS WHO STILL CARRY MP3s</text>
+  </g>
+
+  <!-- ===== TOP TUCK FLAP (x 30..105, y 0..18) ================== -->
+  <text x="50" y="14" class="h2" fill="#ff6b35">mp3 player</text>
+
+  <!-- ===== BOTTOM TUCK FLAP (x 30..105, y 73..91) ============== -->
+  <text x="34" y="83" class="mono">MODEL MP3-CLIP-01   ·   v1.0</text>
+  <text x="34" y="88" class="mono">DESIGNED IN POLAND   ·   ASSEMBLED IN PL</text>
+
+  <!-- ===== Faint dieline guide (delete before press) =========== -->
+  <g id="GuideLayer" opacity="0.6">
+    <path class="cut" d="
+      M 0 18 L 0 73 L 10 73 L 10 81 L 30 81 L 30 91 L 105 91
+      L 105 81 L 125 81 L 125 73 L 200 73 L 200 18 L 125 18
+      L 125 10 L 105 10 L 105 0 L 72 0 L 67.5 4 L 63 0 L 30 0
+      L 30 10 L 10 10 L 10 18 Z"/>
+    <line class="fold" x1="10"  y1="18" x2="10"  y2="73"/>
+    <line class="fold" x1="30"  y1="18" x2="30"  y2="73"/>
+    <line class="fold" x1="105" y1="18" x2="105" y2="73"/>
+    <line class="fold" x1="125" y1="18" x2="125" y2="73"/>
+    <line class="fold" x1="10"  y1="18" x2="125" y2="18"/>
+    <line class="fold" x1="10"  y1="73" x2="125" y2="73"/>
+  </g>
+</svg>

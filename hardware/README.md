@@ -14,11 +14,11 @@ KiCad 8 project for the ESP32 MP3 player.
 ## Status
 
 The shipped `.kicad_sch` is a block-level overview only — it loads in
-KiCad 8, shows each subsystem as a labeled block, and lists the
-connection summary. **Recreate the detailed schematic from
-`SCHEMATIC.md`** before exporting gerbers; the netlist there is
-component-accurate down to pin numbers, pull-up values, and bypass
-caps.
+KiCad 7 and 8 (file format version `20230121`/sch and `20221018`/pcb),
+shows each subsystem as a labeled block, and lists the connection
+summary. **Recreate the detailed schematic from `SCHEMATIC.md`**
+before exporting gerbers; the netlist there is component-accurate
+down to pin numbers, pull-up values, and bypass caps.
 
 The `.kicad_pcb` ships as a board outline (47 × 32 mm rectangle) with
 4 mounting holes at corner inset 3 mm — drop in footprints from the BOM
