@@ -58,7 +58,7 @@ module tray() {
             cube([NOTCH_W, 4, NOTCH_D + 0.1]);
 
         // logo deboss on the device pocket floor (subtle, optional)
-        translate([DEV_X + 4, DEV_Y + 3, 0])
+        translate([DEV_X + 4, DEV_Y + 3, TRAY_T - 0.4])
             linear_extrude(0.4)
             text("mp3 player", size = 3.0,
                  font = "Liberation Sans:style=Bold");
